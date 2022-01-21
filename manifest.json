@@ -1,0 +1,24 @@
+{
+    "name": "Novelki downloader",
+    "description": "Pobieranie i konwersja novelek na epub.",
+    "version": "0.2",
+    "manifest_version": 3,
+    "permissions": [
+      "notifications",
+      "storage",
+      "tabs",     
+      "activeTab", 
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [{
+      "matches": ["*://novelki.pl/*"],
+      "include_globs": ["*://novelki.pl/projekty/*"],
+      "js": ["jquery-3.6.0.js","facehugger.js"]
+    }],
+    "action": {
+      "default_popup": "popup.html"
+      }
+  }
